@@ -1,27 +1,89 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A278a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
-    <device id="retina4_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Ramp PlacerVC-->
         <scene sceneID="tXr-a1-R10">
             <objects>
-                <viewController id="BV1-FR-VrT" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <arscnView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="BrB-h1-WRS">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <viewController id="BV1-FR-VrT" customClass="RampPlacerVC" customModule="Ramp_Up" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yrY-7J-ZGI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    </arscnView>
+                        <subviews>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CHW-iv-sso">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                            </arscnView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xUq-mA-5KI">
+                                <rect key="frame" x="258" y="697" width="107" height="71"/>
+                                <state key="normal" image="rampIcon"/>
+                                <connections>
+                                    <action selector="rampBtnPressed:" destination="BV1-FR-VrT" eventType="touchUpInside" id="IOC-hG-TGE"/>
+                                </connections>
+                            </button>
+                            <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="3N5-1d-DMM">
+                                <rect key="frame" x="15" y="717" width="173" height="32"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cz3-jP-eFQ">
+                                        <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
+                                        <state key="normal" image="removeButton"/>
+                                        <connections>
+                                            <action selector="removeBtnPressed:" destination="BV1-FR-VrT" eventType="touchUpInside" id="zE6-wy-AJL"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wwz-Mj-LDv">
+                                        <rect key="frame" x="47" y="0.0" width="32" height="32"/>
+                                        <state key="normal" image="rotateButton"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0gI-NF-HSj">
+                                        <rect key="frame" x="94" y="0.0" width="32" height="32"/>
+                                        <state key="normal" image="upArrow"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vgx-ON-J2k">
+                                        <rect key="frame" x="141" y="0.0" width="32" height="32"/>
+                                        <state key="normal" image="downArrow"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="3N5-1d-DMM" firstAttribute="centerY" secondItem="xUq-mA-5KI" secondAttribute="centerY" id="Ew6-8Z-54F"/>
+                            <constraint firstItem="qzC-O3-ktN" firstAttribute="bottom" secondItem="xUq-mA-5KI" secondAttribute="bottom" constant="10" id="Skl-zV-ecq"/>
+                            <constraint firstItem="CHW-iv-sso" firstAttribute="trailing" secondItem="qzC-O3-ktN" secondAttribute="trailing" id="TSw-il-chg"/>
+                            <constraint firstItem="qzC-O3-ktN" firstAttribute="trailing" secondItem="xUq-mA-5KI" secondAttribute="trailing" constant="10" id="Xmn-8t-u22"/>
+                            <constraint firstItem="CHW-iv-sso" firstAttribute="leading" secondItem="qzC-O3-ktN" secondAttribute="leading" id="ZzU-fQ-Xwr"/>
+                            <constraint firstAttribute="bottom" secondItem="CHW-iv-sso" secondAttribute="bottom" id="g02-y6-CiX"/>
+                            <constraint firstItem="CHW-iv-sso" firstAttribute="top" secondItem="yrY-7J-ZGI" secondAttribute="top" id="mdT-ZE-Aky"/>
+                            <constraint firstItem="3N5-1d-DMM" firstAttribute="leading" secondItem="qzC-O3-ktN" secondAttribute="leading" constant="15" id="yfZ-Cy-zjz"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="qzC-O3-ktN"/>
+                    </view>
                     <connections>
-                        <outlet property="sceneView" destination="BrB-h1-WRS" id="5nT-qQ-ynl"/>
+                        <outlet property="controlsStack" destination="3N5-1d-DMM" id="HnQ-GP-nqp"/>
+                        <outlet property="downBtn" destination="Vgx-ON-J2k" id="uWa-kQ-seH"/>
+                        <outlet property="rotateBtn" destination="Wwz-Mj-LDv" id="GSG-15-FWK"/>
+                        <outlet property="sceneView" destination="CHW-iv-sso" id="B5o-N4-yOm"/>
+                        <outlet property="upBtn" destination="0gI-NF-HSj" id="q83-GH-scv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="138.40000000000001" y="132.26600985221674"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="downArrow" width="32" height="32"/>
+        <image name="rampIcon" width="107" height="71"/>
+        <image name="removeButton" width="32" height="32"/>
+        <image name="rotateButton" width="32" height="32"/>
+        <image name="upArrow" width="32" height="32"/>
+    </resources>
 </document>
